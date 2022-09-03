@@ -38,4 +38,21 @@ public class BankAccountTest {
         BankAccount bankAccount = new BankAccount(400, 100);
         assertTrue(bankAccount.isActive());
     }
+
+
+    @Test
+    @DisplayName("Test the holder name is not empty")
+    public void TestHolderName() {
+        BankAccount bankAccount = new BankAccount(500, 0);
+        bankAccount.setHolderName("Fredie");
+        assertNotNull(bankAccount.getHolderName());
+
+    }
+
+    @Test
+    @DisplayName("Test we cannot withdraw below minimum")
+    public void testNoWithdrawBelowMinimum() {
+        BankAccount bankAccount = new BankAccount(500, -1000);
+        assertThrows(RuntimeException.class, () -> bankAccount.withdraw(5000));
+    }
 }
