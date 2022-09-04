@@ -1,0 +1,8 @@
+1. the differences between Assumption and Assertion
+Assumption met: test runs; not met: test aborted
+Assertion true: test passes; false: test fails
+
+2. nested tests are used to control the relationship bwt tests, to group unit tests
+useful when: featured separation, code organized around method or feature
+
+3. a delta is the difference btw the actual outcome and the expected outcome.
